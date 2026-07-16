@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Foxaphina's Pet Party</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff8fc;
+      margin: 0;
+      padding: 30px;
+      overflow-x: hidden;
+    }
+
+    .peacocks {
+      color: purple;
+    }
+
+    .cats {
+      color: pink;
+      font-style: italic;
+      text-decoration: underline;
+    }
+
+    .dogs {
+      color: red;
+      text-decoration: underline;
+    }
+
+    #wishbone {
+      font-weight: 800;
+    }
+
+    #beethoven {
+      color: orange;
+    }
+
+    #lassie {
+      color: #deb887;
+    }
+
+    ul,
+    ol {
+      display: inline-block;
+      text-align: left;
+    }
+
+    ul {
+      list-style-type: "🐾  ";
+    }
+
+    ol {
+      list-style-type: "🐶  ";
+    }
+
+    .cat-image-container {
+      width: 240px;
+      max-width: 90%;
+      margin: 30px auto;
+    }
+
+    .cat-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .dancing-hamster {
+      position: fixed;
+      left: -50px;
+      font-size: 24px;
+      z-index: 9999;
+      pointer-events: none;
+
+      animation-name: hamster-run, hamster-bounce;
+      animation-duration: var(--run-duration), 0.35s;
+      animation-delay: var(--delay), var(--delay);
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: 1, infinite;
+      animation-direction: normal, alternate;
+      animation-fill-mode: forwards, none;
+    }
+
+    @keyframes hamster-run {
+      from {
+        left: -50px;
+      }
+
+      to {
+        left: calc(100vw + 50px);
+      }
+    }
+
+    @keyframes hamster-bounce {
+      from {
+        transform: translateY(0) rotate(-12deg);
+      }
+
+      to {
+        transform: translateY(-18px) rotate(12deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dancing-hamster {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1 class="dogs">Dogs here</h1>
+
+      <ol>
+        <li id="wishbone">Wishbone</li>
+        <li id="beethoven">Beethoven</li>
+        <li id="lassie">Lassie</li>
+      </ol>
+    </section>
+
+    <section>
+      <h3 class="cats">Meow Mix Party</h3>
+
+      <ul class="cats">
+        <li>Salmon</li>
+        <li>Tuna</li>
+        <li>Halibut</li>
+      </ul>
+    </section>
+
+    <section>
+      <h5 class="peacocks">Caaaaaaaaw 🦚</h5>
+      <p class="cats">Meow meow meow</p>
+    </section>
+
+    <div class="cat-image-container">
+      <img
+        id="cat-image"
+        class="cat-image"
+        src="https://cdn.britannica.com/34/235834-050-C5843610/two-different-breeds-of-cats-side-by-side-outdoors-in-the-garden.jpg"
+        alt="Two cats sitting together in a garden"
+      >
+    </div>
+
+    <b>Dogs</b>
+    <h1>Bears love foxes</h1>
+  </main>
+
+  <script>
+    const catImage = document.querySelector("#cat-image");
+
+    catImage.addEventListener("click", () => {
+      alert("meow meow meow");
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const hamsterCount = 12;
+
+      for (let i = 0; i < hamsterCount; i++) {
+        const hamster = document.createElement("span");
+
+        hamster.textContent = "🐹";
+        hamster.className = "dancing-hamster";
+        hamster.setAttribute("aria-hidden", "true");
+
+        hamster.style.top = `${10 + Math.random() * 75}vh`;
+        hamster.style.setProperty("--delay", `${i * 0.3}s`);
+        hamster.style.setProperty(
+          "--run-duration",
+          `${5 + Math.random() * 3}s`
+        );
+
+        document.body.appendChild(hamster);
+
+        hamster.addEventListener("animationend", (event) => {
+          if (event.animationName === "hamster-run") {
+            hamster.remove();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
