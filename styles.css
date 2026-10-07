@@ -1,0 +1,70 @@
+/* monklife.one — The Converting Magic (single long scroll)
+   Visual identity carried over from the previous site:
+   Crimson Text + Source Sans Pro, saddle-brown/chocolate, beige. */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans Pro', sans-serif; line-height: 1.6; color: #333; background-color: #fefefe; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+h1, h2, h3, h4 { font-family: 'Crimson Text', serif; margin-bottom: 1rem; }
+h1 { font-size: 2.5rem; font-weight: 600; }
+h2 { font-size: 2rem; font-weight: 600; color: #8B4513; }
+h3 { font-size: 1.5rem; font-weight: 600; color: #8B4513; margin-top: 1.5rem; }
+p { margin-bottom: 1rem; }
+a { color: #D2691E; }
+section { scroll-margin-top: 90px; }
+
+/* Navigation */
+.navbar { background: linear-gradient(135deg, #8B4513, #D2691E); padding: 1rem 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: 'Crimson Text', serif; font-size: 1.8rem; font-weight: 600; color: white; text-decoration: none; }
+.nav-menu { display: flex; list-style: none; gap: 1.4rem; }
+.nav-link { color: white; text-decoration: none; font-weight: 400; transition: color 0.3s ease; }
+.nav-link:hover { color: #FFE4B5; }
+.hamburger { display: none; flex-direction: column; cursor: pointer; }
+.bar { width: 25px; height: 3px; background-color: white; margin: 3px 0; transition: 0.3s; }
+
+/* Main / hero */
+main { margin-top: 80px; }
+.hero { background: linear-gradient(135deg, #F5F5DC, #FAEBD7); padding: 80px 20px 40px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
+.hero-background { background: linear-gradient(135deg, #F5F5DC, #FAEBD7); padding-bottom: 40px; }
+.hero-content { flex: 1; max-width: 600px; }
+.hero h1 { color: #8B4513; margin-bottom: 1.5rem; line-height: 1.2; }
+.hero-subtitle { font-size: 1.2rem; color: #666; margin-bottom: 2rem; font-style: italic; }
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.btn-primary, .btn-secondary { padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block; }
+.btn-primary { background: linear-gradient(135deg, #8B4513, #D2691E); color: white; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(139,69,19,0.3); }
+.btn-secondary { background: transparent; color: #8B4513; border: 2px solid #8B4513; }
+.btn-secondary:hover { background: #8B4513; color: white; }
+.hero-image { flex: 1; display: flex; justify-content: center; align-items: center; }
+.lotus-symbol { font-size: 10rem; color: #D2691E; opacity: 0.8; animation: gentle-pulse 4s ease-in-out infinite; }
+@keyframes gentle-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+/* Stages */
+.stage { padding: 60px 20px; background: white; }
+.stage.alt { background: #FAFAFA; }
+.stage-label { font-family: 'Source Sans Pro', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 600; color: #D2691E; margin-bottom: 0.5rem; }
+.content-section { padding: 20px; max-width: 800px; margin: 0 auto; }
+.stage-list { margin: 0 0 1.5rem 1.4rem; }
+.stage-list li { margin-bottom: 0.6rem; }
+.highlight-box { background: #FFF8DC; border-left: 4px solid #D2691E; padding: 1.5rem; margin: 2rem 0; border-radius: 0 10px 10px 0; }
+.highlight-box p { margin-bottom: 0; }
+.practice-card { background: #FFF8DC; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 1px solid #eee; border-left: 4px solid #8B4513; }
+.practice-card h3 { margin-top: 0; }
+.practice-card p { margin-bottom: 0; }
+
+/* Footer */
+footer { background: #333; color: white; padding: 2rem 0; text-align: center; }
+footer a { color: #FFE4B5; }
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-menu { position: fixed; left: -100%; top: 70px; flex-direction: column; background-color: #8B4513; width: 100%; text-align: center; transition: 0.3s; box-shadow: 0 10px 27px rgba(0,0,0,0.05); padding: 2rem 0; gap: 0; }
+  .nav-menu.active { left: 0; }
+  .nav-menu li { margin: 1rem 0; }
+  .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+  .lotus-symbol { font-size: 6rem; }
+  h1 { font-size: 2rem; } h2 { font-size: 1.5rem; }
+  .hero-buttons { justify-content: center; }
+}
