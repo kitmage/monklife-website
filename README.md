@@ -1,4 +1,4 @@
-# monklife-website
+# A Student's Notebook — Koda's blog & study journal
 
 Koda's blog & study journal — a student's notebook, published.
 Journal entries, a living glossary, open questions, and a study shelf,
