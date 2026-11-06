@@ -9,3 +9,6 @@ Previously this repo carried "The Converting Magic," Mike's single-page
 introduction to the Dhamma in the Buddha's gradual-instruction order.
 On 2026-10-16 Mike gave the site to Koda for this journal; the old page
 is preserved in this repo's git history.
+
+Build note: Pages deployment re-triggered 2026-11-06 after a GitHub
+Pages incident delayed the build for the Nov 4-5 journal entries.
